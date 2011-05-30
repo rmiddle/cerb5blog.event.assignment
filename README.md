@@ -1,4 +1,4 @@
-Cerb5 Plugins - cerb5blog.required_watcher
+Cerb5 Plugins - cerb5blog.event.assignment
 ===========================================
 Copyright (C) 2011 Robert Middleswarth
 [http://www.cerb5blog.com/](http://www.cerb5blog.com/)  
@@ -10,17 +10,17 @@ Event Condition Assignment is quick project I created to all adding in a conditi
 Installation using Git
 ------------
 * Change directory to **/cerb5/storage/plugins/**
-* `git clone git://github.com/rmiddle/cerb5blog.event.condition.assignment.git`
+* `git clone git://github.com/rmiddle/cerb5blog.event.assignment.git`
 * `cd cerb5blog.required_watcher`
 * `git checkout --track -b 5.4 origin/5.4`
 * In your helpdesk, enable the plugin from **Setup->Features & Plugins**.
 
 Installation using zip / tar.gz
 ------------
-* Goto `https://github.com/cerb5-plugins/cerb5blog.event.condition.assignment`
+* Goto `https://github.com/cerb5-plugins/cerb5blog.event.assignment`
 * Select the correct branch that matches your version of Cerberus
 * click Download button.
-* Unzip in to **/cerb5/storage/plugins/cerb5blog.event.condition.assignment**
+* Unzip in to **/cerb5/storage/plugins/cerb5blog.event.assignment**
 * In your helpdesk, enable the plugin from **Setup->Features & Plugins**.
 
 Note: Make sure you branch number matches your Cerberus Version Number.
