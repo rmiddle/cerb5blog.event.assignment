@@ -13,7 +13,7 @@ Installation using Git
 ------------
 * Change directory to **/cerb5/storage/plugins/**
 * `git clone git://github.com/rmiddle/cerb5blog.event.assignment.git`
-* `cd cerb5blog.required_watcher`
+* `cd cerb5blog.event.assignment`
 * `git checkout --track -b 5.4 origin/5.4`
 * In your helpdesk, enable the plugin from **Setup->Features & Plugins**.
 
