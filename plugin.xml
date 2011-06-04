@@ -78,7 +78,6 @@
 			<class>
 				<file>api/events/ticket_watchers_assigned.php</file>
 				<name>Event_Cerb5BlogTicketWatchersAssigned</name>
-						<file path="">
 			</class>
 			<params>
 				<param key="contexts">
