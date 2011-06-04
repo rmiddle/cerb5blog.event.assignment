@@ -67,7 +67,7 @@
 				<param key="contexts">
 					<value>
 						<data key="cerberusweb.contexts.worker" />
-						<data key="cerberusweb.contexts.group" />
+						<!--<data key="cerberusweb.contexts.group" />-->
 					</value>
 				</param>
 			</params>
@@ -85,7 +85,7 @@
 				<param key="contexts">
 					<value>
 						<data key="cerberusweb.contexts.worker" />
-						<data key="cerberusweb.contexts.group" />
+						<!--<data key="cerberusweb.contexts.group" />-->
 					</value>
 				</param>
 			</params>
