@@ -29,9 +29,11 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
                             $context_watchers = CerberusContexts::getWatchers(CerberusContexts::CONTEXT_TICKET, $ticket_id);
                             if(is_array($context_watchers) && !empty($context_watchers))
                                 foreach($context_watchers as $watcher_id => $watcher) {
-                                    Event_Cerb5BlogTicketWatchersAssigned::trigger($ticket->first_message_id, $watcher_id);
+                                    if ($watcher_id == $worker_id)
+                                        Event_Cerb5BlogTicketWatchersAssigned::trigger($ticket->first_message_id, $watcher_id);
                                 }
                             break;
+                        /* Disabling until I have more time to work on this    
                         case CerberusContexts::CONTEXT_TASK:
                             $task_id = $event->params['from_context_id'];
                             $context_watchers = CerberusContexts::getWatchers(CerberusContexts::CONTEXT_TASK, $task_id);
@@ -40,6 +42,7 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
                                     Event_WatchersAssignedToWorker::trigger($task_id, $watcher_id);
                                 }
                             break;
+                        */
                     }	
                 }
 				break;

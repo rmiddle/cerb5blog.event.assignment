@@ -2,11 +2,11 @@
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.devblocks.com/schema/plugin.xsd">
 	<id>cerb5blog.event.condition.assignment</id>
 	<name>[Cerb5Blog] Event Condition Assignment</name>
-	<description>Adds a custom condition on an assignment event.</description>
-	<author>WebGroup Media, LLC.</author>
+	<description>Add new Assignment Behaviors</description>
+	<author>Robert Middleswarth</author>
 	<revision>1</revision>
-	<link>http://www.cerb5.com/</link>
-	<!--<image>plugin.png</image>-->
+	<link>http://www.cerb5blog.com/project/cerb5blog.event.assignment</link>
+	<image>plugin.png</image>
  
 	<!-- Plugin Dependencies -->
 	
@@ -67,7 +67,6 @@
 				<param key="contexts">
 					<value>
 						<data key="cerberusweb.contexts.worker" />
-						<!--<data key="cerberusweb.contexts.group" />-->
 					</value>
 				</param>
 			</params>
@@ -85,7 +84,6 @@
 				<param key="contexts">
 					<value>
 						<data key="cerberusweb.contexts.worker" />
-						<!--<data key="cerberusweb.contexts.group" />-->
 					</value>
 				</param>
 			</params>
