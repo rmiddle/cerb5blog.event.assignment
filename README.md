@@ -5,7 +5,9 @@ Copyright (C) 2011 Robert Middleswarth
 
 What's this?
 ------------
-Event Condition Assignment is quick project I created to all adding in a condition of assignment — Read more 
+Event Assignment is a project I created add in a new Behavior for Adding of Watchers and *Owners in both Users and groups.
+
+* Requires 5.4.3 for the new owner function.
 
 Installation using Git
 ------------
