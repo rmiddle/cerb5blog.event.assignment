@@ -17,7 +17,7 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
                     switch($from_context) {
                         case CerberusContexts::CONTEXT_TICKET:
                             $ticket_id = $event->params['from_context_id'];
-                            $ticket = DAO_Ticket::get($from_context_id);
+                            $ticket = DAO_Ticket::get($ticket_id );
                        		// Events
                             //Event_MailReceivedByGroup::trigger($message_id, $group->id);
 
