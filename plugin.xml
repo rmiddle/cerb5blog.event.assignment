@@ -61,7 +61,7 @@
 			<name>New Owner Assignment</name>
 			<class>
 				<file>api/events/owner_assigned.php</file>
-				<name>Event_Cerb5BlogOwnerAssignedr</name>
+				<name>Event_Cerb5BlogOwnerAssigned</name>
 			</class>
 			<params>
 				<param key="contexts">
