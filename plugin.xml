@@ -5,13 +5,13 @@
 	<description>Add new Assignment Behaviors</description>
 	<author>Robert Middleswarth</author>
 	<revision>1</revision>
-	<link>http://cerb5blog.com/project/event_assignmentt</link>
+	<link>http://cerb5blog.com/project/event_assignment</link>
 	<image>plugin.png</image>
  
 	<!-- Plugin Dependencies -->
 	
 	<dependencies>
-		<require plugin_id="cerberusweb.core" version="5.4.0" />
+		<require plugin_id="cerberusweb.core" version="5.4.3" />
 	</dependencies>
 
 	<!-- Patches -->
