@@ -5,7 +5,7 @@ Copyright (C) 2011 Robert Middleswarth
 
 What's this?
 ------------
-Event Assignment is a project I created add in a new Behavior for Adding of Watchers and *Owners in both Users and groups.
+Event Assignment is a project I created that adds in a new behaviour for when someone is added as a Watcher and/or Owners using Virtual Attendants (Currently only under worker settings) it works inside the ticket scope not the notification scope allowing diff options to be done.
 
 * Requires 5.4.3 for the new owner function.
 
