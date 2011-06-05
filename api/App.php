@@ -17,13 +17,14 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
                     switch($from_context) {
                         case CerberusContexts::CONTEXT_TICKET:
                             $ticket_id = $event->params['from_context_id'];
-                            $ticket = DAO_Ticket::get($ticket_id );
+                            $ticket = DAO_Ticket::get($ticket_id);
                        		// Events
                             //Event_MailReceivedByGroup::trigger($message_id, $group->id);
 
                             // Trigger Worker Owner
-                            if ($ticket->owner_id == $worker_id)
-                                Event_Cerb5BlogOwnerAssigned::trigger($ticket->first_message_id, $worker_id);
+                            // Wrong Place Context Worker ins't called when someone becauses an owner.
+                            //if ($ticket->owner_id == $worker_id)
+                            //    Event_Cerb5BlogOwnerAssigned::trigger($ticket->first_message_id, $worker_id);
                             
                             // Trigger Worker Watchers
                             $context_watchers = CerberusContexts::getWatchers(CerberusContexts::CONTEXT_TICKET, $ticket_id);
