@@ -23,14 +23,14 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
 
                             // Trigger Worker Owner
                             if ($ticket->owner_id == $worker_id)
-                                Event_Cerb5BlogOwnerAssigned::trigger($ticket->first_message_id, $ticket_id);
+                                Event_Cerb5BlogOwnerAssigned::trigger($ticket->first_message_id, $worker_id);
                             
                             // Trigger Worker Watchers
                             $context_watchers = CerberusContexts::getWatchers(CerberusContexts::CONTEXT_TICKET, $ticket_id);
                             if(is_array($context_watchers) && !empty($context_watchers))
                                 foreach($context_watchers as $watcher_id => $watcher) {
                                     if ($watcher_id == $worker_id)
-                                        Event_Cerb5BlogTicketWatchersAssigned::trigger($ticket->first_message_id, $watcher_id);
+                                        Event_Cerb5BlogTicketWatchersAssigned::trigger($ticket->first_message_id, $worker_id);
                                 }
                             break;
                         /* Disabling until I have more time to work on this    
