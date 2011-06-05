@@ -21,11 +21,6 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
                        		// Events
                             //Event_MailReceivedByGroup::trigger($message_id, $group->id);
 
-                            // Trigger Worker Owner
-                            // Wrong Place Context Worker ins't called when someone becauses an owner.
-                            //if ($ticket->owner_id == $worker_id)
-                            //    Event_Cerb5BlogOwnerAssigned::trigger($ticket->first_message_id, $worker_id);
-                            
                             // Trigger Worker Watchers
                             $context_watchers = CerberusContexts::getWatchers(CerberusContexts::CONTEXT_TICKET, $ticket_id);
                             if(is_array($context_watchers) && !empty($context_watchers))
@@ -44,8 +39,30 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
                                 }
                             break;
                         */
+                        
                     }	
                 }
+   			case 'dao.ticket.update':
+                $objects = $event->params['objects'];
+               	if(is_array($objects))
+                    foreach($objects as $object_id => $object) {
+                        @$model = $object['model'];
+                        @$changes = $object['changes'];
+
+                        if(empty($model) || empty($changes))
+                            continue;
+                        
+                   		/*
+                        * Owner changed
+                        */
+                        if(isset($changes[DAO_Ticket::OWNER_ID])) {
+                            @$owner_id = $changes[DAO_Ticket::OWNER_ID];
+                            if(!empty($owner_id['to'])) {
+                                $target_worker = DAO_Worker::get($changes[DAO_Ticket::OWNER_ID]['to']);
+                                Event_Cerb5BlogOwnerAssigned::trigger($object_id, $target_worker->id);
+                            }
+                        }
+                    }
 				break;
 		}
 	}

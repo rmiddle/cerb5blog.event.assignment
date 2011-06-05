@@ -51,6 +51,7 @@
 				<param key="events">
 					<value>
 						<data key="context_link.set" />
+						<data key="dao.ticket.update" />
 					</value>
 				</param>
 			</params>
