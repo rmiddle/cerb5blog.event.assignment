@@ -31,6 +31,12 @@
 		<file path="api/events/ticket_watchers_assigned.php">
 			<class name="Event_Cerb5BlogTicketWatchersAssigned" />
 		</file>
+		<file path="api/events/owner_assigned_group.php">
+			<class name="Event_Cerb5BlogOwnerAssignedGroup" />
+		</file>
+		<file path="api/events/ticket_watchers_assigned_group.php">
+			<class name="Event_Cerb5BlogTicketWatchersAssignedGroup" />
+		</file>
 	</class_loader>
 
 	<!-- Extensions -->
