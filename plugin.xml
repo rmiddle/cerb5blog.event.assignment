@@ -89,37 +89,5 @@
 			</params>
 		</extension>
 		
-		<extension point="devblocks.event">
-			<id>cerb5blog.event.condition.assignment.behavior.owner.group</id>
-			<name>New Owner Assignment</name>
-			<class>
-				<file>api/events/owner_assigned_group.php</file>
-				<name>Event_Cerb5BlogOwnerAssignedGroup</name>
-			</class>
-			<params>
-				<param key="contexts">
-					<value>
-						<data key="cerberusweb.contexts.group" />
-					</value>
-				</param>
-			</params>
-		</extension>
-				
-		<extension point="devblocks.event">
-			<id>cerb5blog.event.condition.assignment.behavior.watcher.ticket.group</id>
-			<name>New Ticket Watcher Assignment</name>
-			<class>
-				<file>api/events/ticket_watchers_assigned_group.php</file>
-				<name>Event_Cerb5BlogTicketWatchersAssignedGroup</name>
-			</class>
-			<params>
-				<param key="contexts">
-					<value>
-						<data key="cerberusweb.contexts.group" />
-					</value>
-				</param>
-			</params>
-		</extension>
-		
 	</extensions> 
 </plugin>
