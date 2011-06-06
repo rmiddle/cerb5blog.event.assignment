@@ -71,7 +71,8 @@ class Event_Cerb5BlogTicketWatchersAssignedGroup extends Extension_DevblocksEven
 
 		$values['sender_is_worker'] = (!empty($values['worker_id'])) ? 1 : 0;
 		$values['sender_is_me'] = (!empty($worker_id) && isset($values['worker_id']) && $worker_id==$values['worker_id']) ? 1 : 0;
-		
+		$values['watcher_worker_id'] = $worker_id;
+        
 		/**
 		 * Ticket
 		 */
@@ -129,6 +130,7 @@ class Event_Cerb5BlogTicketWatchersAssignedGroup extends Extension_DevblocksEven
 		/**
 		 * Sender Worker
 		 */
+   		@$worker_id = $values['worker_id'];
 		$worker_labels = array();
 		$worker_values = array();
 		CerberusContexts::getContext(CerberusContexts::CONTEXT_WORKER, $worker_id, $worker_labels, $worker_values, null, true);
