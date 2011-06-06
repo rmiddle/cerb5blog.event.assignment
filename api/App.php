@@ -61,8 +61,8 @@ class Cerb5BlogEventAssignmentListener extends DevblocksEventListenerExtension {
                             @$owner_id = $changes[DAO_Ticket::OWNER_ID];
                             if(!empty($owner_id['to'])) {
                                 $target_worker = DAO_Worker::get($changes[DAO_Ticket::OWNER_ID]['to']);
-                                Event_Cerb5BlogOwnerAssigned::trigger($object_id, $target_worker->id);
-                                Event_Cerb5BlogOwnerAssignedGroup::trigger($object_id, $target_worker->id, $model[DAO_Ticket::TEAM_ID]); 
+                                Event_Cerb5BlogOwnerAssigned::trigger($model[DAO_Ticket::FIRST_MESSAGE_ID], $target_worker->id);
+                                Event_Cerb5BlogOwnerAssignedGroup::trigger($model[DAO_Ticket::FIRST_MESSAGE_ID], $target_worker->id, $model[DAO_Ticket::TEAM_ID]); 
                             }
                             
                         }
