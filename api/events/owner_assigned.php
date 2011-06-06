@@ -1,6 +1,6 @@
 <?php
 class Event_Cerb5BlogOwnerAssigned extends Extension_DevblocksEvent {
-	const ID = 'cerb5blog.event.condition.assignment.behavior.owner';
+	const ID = 'cerb5blog.event.assignment.behavior.owner';
 	
 	static function trigger($message_id, $worker_id) {
 		$events = DevblocksPlatform::getEventService();

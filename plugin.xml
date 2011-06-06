@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.devblocks.com/schema/plugin.xsd">
-	<id>cerb5blog.event.condition.assignment</id>
-	<name>[Cerb5Blog] Event Condition Assignment</name>
+	<id>cerb5blog.event.assignment</id>
+	<name>[Cerb5Blog] Event Assignment</name>
 	<description>Add new Assignment Behaviors</description>
 	<author>Robert Middleswarth</author>
 	<revision>1</revision>
@@ -40,11 +40,11 @@
 		<!-- Event Triggers -->
 		
 		<extension point="devblocks.listener.event">
-			<id>cerb5blog.event.condition.assignment.listeners</id>
+			<id>cerb5blog.event.assignment.listeners</id>
 			<name>[Cerb5Blog] Event Condition Assignment Listener</name>
 			<class>
 				<file>api/App.php</file>
-				<name>Cerb5BlogEventConditionAssignmentListener</name>
+				<name>Cerb5BlogEventAssignmentListener</name>
 			</class>
 			<params>
 				<!-- E-mail Event Listener -->
@@ -58,7 +58,7 @@
 		</extension>
 		
 		<extension point="devblocks.event">
-			<id>cerb5blog.event.condition.assignment.behavior.owner</id>
+			<id>cerb5blog.event.assignment.behavior.owner</id>
 			<name>New Owner Assignment</name>
 			<class>
 				<file>api/events/owner_assigned.php</file>
@@ -74,7 +74,7 @@
 		</extension>
 				
 		<extension point="devblocks.event">
-			<id>cerb5blog.event.condition.assignment.behavior.watcher.ticket</id>
+			<id>cerb5blog.event.assignment.behavior.watcher.ticket</id>
 			<name>New Ticket Watcher Assignment</name>
 			<class>
 				<file>api/events/ticket_watchers_assigned.php</file>
@@ -84,6 +84,38 @@
 				<param key="contexts">
 					<value>
 						<data key="cerberusweb.contexts.worker" />
+					</value>
+				</param>
+			</params>
+		</extension>
+		
+		<extension point="devblocks.event">
+			<id>cerb5blog.event.assignment.behavior.owner.group</id>
+			<name>New Owner Assignment</name>
+			<class>
+				<file>api/events/owner_assigned_group.php</file>
+				<name>Event_Cerb5BlogOwnerAssignedGroup</name>
+			</class>
+			<params>
+				<param key="contexts">
+					<value>
+						<data key="cerberusweb.contexts.group" />
+					</value>
+				</param>
+			</params>
+		</extension>
+				
+		<extension point="devblocks.event">
+			<id>cerb5blog.event.assignment.behavior.watcher.ticket.group</id>
+			<name>New Ticket Watcher Assignment</name>
+			<class>
+				<file>api/events/ticket_watchers_assigned_group.php</file>
+				<name>Event_Cerb5BlogTicketWatchersAssignedGroup</name>
+			</class>
+			<params>
+				<param key="contexts">
+					<value>
+						<data key="cerberusweb.contexts.group" />
 					</value>
 				</param>
 			</params>

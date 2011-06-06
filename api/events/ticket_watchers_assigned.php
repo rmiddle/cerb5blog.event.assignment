@@ -1,6 +1,6 @@
 <?php
 class Event_Cerb5BlogTicketWatchersAssigned extends Extension_DevblocksEvent {
-	const ID = 'cerb5blog.event.condition.assignment.behavior.watcher.ticket';
+	const ID = 'cerb5blog.event.assignment.behavior.watcher.ticket';
 	
 	static function trigger($message_id, $worker_id) {
 		$events = DevblocksPlatform::getEventService();
