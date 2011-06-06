@@ -1,5 +1,5 @@
 <?php
-class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerExtension {
+class Cerb5BlogEventAssignmentListener extends DevblocksEventListenerExtension {
 	function __construct($manifest) {
 		parent::__construct($manifest);
 	}
