@@ -307,6 +307,8 @@ class Event_Cerb5BlogTicketWatchersAssignedGroup extends Extension_DevblocksEven
 	function runActionExtension($token, $trigger, $params, &$values) {
 		@$ticket_id = $values['ticket_id'];
 		@$message_id = $values['id'];
+        $worker = DAO_Worker::get($values['watcher_worker_id'])
+        @$params['to'] = $worker->email; 
 
 		if(empty($ticket_id) || empty($message_id))
 			return;
@@ -323,6 +325,7 @@ class Event_Cerb5BlogTicketWatchersAssignedGroup extends Extension_DevblocksEven
 				break;
 				
 			case 'relay_email':
+                $params['to'] = 
 				DevblocksEventHelper::runActionRelayEmail($params, $values, CerberusContexts::CONTEXT_TICKET, $ticket_id);
 				break;
 				
