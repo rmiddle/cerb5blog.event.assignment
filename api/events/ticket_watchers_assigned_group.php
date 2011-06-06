@@ -307,7 +307,7 @@ class Event_Cerb5BlogTicketWatchersAssignedGroup extends Extension_DevblocksEven
 	function runActionExtension($token, $trigger, $params, &$values) {
 		@$ticket_id = $values['ticket_id'];
 		@$message_id = $values['id'];
-        $worker = DAO_Worker::get($values['watcher_worker_id'])
+        @$worker = DAO_Worker::get($values['watcher_worker_id']);
         @$params['to'] = $worker->email; 
 
 		if(empty($ticket_id) || empty($message_id))
