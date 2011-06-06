@@ -325,7 +325,6 @@ class Event_Cerb5BlogTicketWatchersAssignedGroup extends Extension_DevblocksEven
 				break;
 				
 			case 'relay_email':
-                $params['to'] = 
 				DevblocksEventHelper::runActionRelayEmail($params, $values, CerberusContexts::CONTEXT_TICKET, $ticket_id);
 				break;
 				
