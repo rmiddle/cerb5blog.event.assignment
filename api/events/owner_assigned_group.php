@@ -71,6 +71,7 @@ class Event_Cerb5BlogOwnerAssignedGroup extends Extension_DevblocksEvent {
 
 		$values['sender_is_worker'] = (!empty($values['worker_id'])) ? 1 : 0;
 		$values['sender_is_me'] = (!empty($worker_id) && isset($values['worker_id']) && $worker_id==$values['worker_id']) ? 1 : 0;
+		$values['watcher_worker_id'] = $worker_id;
 		
 		/**
 		 * Ticket
@@ -306,6 +307,8 @@ class Event_Cerb5BlogOwnerAssignedGroup extends Extension_DevblocksEvent {
 	function runActionExtension($token, $trigger, $params, &$values) {
 		@$ticket_id = $values['ticket_id'];
 		@$message_id = $values['id'];
+        @$worker = DAO_Worker::get($values['watcher_worker_id']);
+        @$params['to'][$values['watcher_worker_id']] = $worker->email; 
 
 		if(empty($ticket_id) || empty($message_id))
 			return;
