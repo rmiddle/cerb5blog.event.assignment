@@ -25,8 +25,10 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
                             $context_watchers = CerberusContexts::getWatchers(CerberusContexts::CONTEXT_TICKET, $ticket_id);
                             if(is_array($context_watchers) && !empty($context_watchers))
                                 foreach($context_watchers as $watcher_id => $watcher) {
-                                    if ($watcher_id == $worker_id)
+                                    if ($watcher_id == $worker_id) {
                                         Event_Cerb5BlogTicketWatchersAssigned::trigger($ticket->first_message_id, $worker_id);
+                                        Event_Cerb5BlogTicketWatchersAssignedGroup::trigger($ticket->first_message_id, $worker_id, $ticket->team_id);
+                                    }
                                 }
                             break;
                         /* Disabling until I have more time to work on this    
@@ -60,7 +62,9 @@ class Cerb5BlogEventConditionAssignmentListener extends DevblocksEventListenerEx
                             if(!empty($owner_id['to'])) {
                                 $target_worker = DAO_Worker::get($changes[DAO_Ticket::OWNER_ID]['to']);
                                 Event_Cerb5BlogOwnerAssigned::trigger($object_id, $target_worker->id);
+                                Event_Cerb5BlogOwnerAssignedGroup::trigger($object_id, $target_worker->id,$model[DAO_Ticket::TEAM_ID]); 
                             }
+                            
                         }
                     }
 				break;

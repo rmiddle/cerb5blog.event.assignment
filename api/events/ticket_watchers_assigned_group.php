@@ -85,8 +85,6 @@ class Event_Cerb5BlogTicketWatchersAssignedGroup extends Extension_DevblocksEven
 				$values['is_first'] = ($values['id'] == $ticket_values['initial_message_id']) ? 1 : 0;
 			}
 
-			@$group_id = $ticket_values['group_id'];
-			
 			// Clear dupe content
 			CerberusContexts::scrubTokensWithRegexp(
 				$ticket_labels,
