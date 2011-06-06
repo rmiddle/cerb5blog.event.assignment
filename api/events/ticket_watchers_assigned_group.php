@@ -129,7 +129,6 @@ class Event_Cerb5BlogTicketWatchersAssignedGroup extends Extension_DevblocksEven
 		/**
 		 * Sender Worker
 		 */
-		@$worker_id = $values['worker_id'];
 		$worker_labels = array();
 		$worker_values = array();
 		CerberusContexts::getContext(CerberusContexts::CONTEXT_WORKER, $worker_id, $worker_labels, $worker_values, null, true);
